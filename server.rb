@@ -1,4 +1,5 @@
 require 'socket'
+require 'dotenv/load'
 require_relative 'response'
 require_relative 'request'
 require_relative 'logger'
