@@ -31,7 +31,7 @@ end
 loop do
   begin
     Thread.start(server.accept) do |client|
-      request = Request.new(client.readpartial(4096))
+      request = Request.new(client.readpartial(2048))
       puts Logger.new(request).call
       response = route(request)
       response.send(client)
