@@ -8,7 +8,9 @@ class Request
     @method, @path, _ = lines.first.split
     @path, @query = @path.split("?")
     @headers = parse_headers(lines[1...index])
-    @body = lines[(index+1)..-1].join
+    @body = lines[(index + 1)..-1].join
+
+    puts "<- #{@method} #{@path} #{@query}"
   end
 
   def parse_headers(lines)
@@ -20,5 +22,9 @@ class Request
     end
 
     headers
+  end
+
+  def content_length
+    headers["Content-Length"].to_i
   end
 end

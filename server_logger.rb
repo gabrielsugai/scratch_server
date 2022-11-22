@@ -1,4 +1,4 @@
-class Logger
+class ServerLogger
 
   def initialize(request)
     @request = request
