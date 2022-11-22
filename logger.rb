@@ -11,6 +11,6 @@ class Logger
   private
 
   def build_log
-    "[#{Time.now}] - Method: #{@request.method} | Path: #{@request.path} | Body: #{@request.body}"
+    "[#{Time.now}] - Method: #{@request.method} | Path: #{@request.path} | Query: #{@request.query} | Body: #{@request.body}"
   end
 end
