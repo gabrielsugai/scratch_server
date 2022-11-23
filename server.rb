@@ -50,6 +50,8 @@ end
 
 def route(request, client)
   server = ENV.fetch("SERVER", "localhost").to_i
+  port = ENV.fetch("PORT", 2000).to_i
+
   status, headers, body = APP.call({
     "REQUEST_METHOD" => request.method,
     "PATH_INFO" => request.path,
