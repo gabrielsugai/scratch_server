@@ -49,13 +49,14 @@ def template_exists?(path)
 end
 
 def route(request, client)
+  server = ENV.fetch("SERVER", "localhost").to_i
   status, headers, body = APP.call({
     "REQUEST_METHOD" => request.method,
     "PATH_INFO" => request.path,
     "QUERY_STRING" => request.query,
-    "SERVER_NAME" => "localhost",
-    "SERVER_PORT" => 2000,
-    "HTTP_HOST" => "localhost",
+    "SERVER_NAME" => server,
+    "SERVER_PORT" => port,
+    "HTTP_HOST" => server,
     "rack.input" => client
   })
 
