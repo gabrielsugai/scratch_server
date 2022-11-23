@@ -49,7 +49,7 @@ def template_exists?(path)
 end
 
 def route(request, client)
-  server = ENV.fetch("SERVER", "localhost").to_i
+  server = ENV.fetch("SERVER", "localhost")
   port = ENV.fetch("PORT", 2000).to_i
 
   status, headers, body = APP.call({
