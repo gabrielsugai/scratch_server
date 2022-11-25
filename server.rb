@@ -15,7 +15,7 @@ end
 
 class PagesController < ActionController::Base
   def index
-    render inline: "<h1>Hello World!</h1> <p>I'm just a single file Rails application</p>"
+    render inline: "<h1>Hello World!</h1> <p>Scratch Server</p>"
   end
 end
 
